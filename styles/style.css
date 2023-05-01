@@ -1,0 +1,121 @@
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+a:hover,
+.active__page {
+  border-bottom: 2px solid black;
+}
+
+.filter input {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+
+.results__container,
+.wish__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  max-width: 1920px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: lightblue;
+  padding: 10px;
+  width: 100%;
+  min-width: 250px;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card:nth-child(odd) {
+  background-color: lightcoral;
+}
+
+.card span {
+  font-style: oblique;
+  font-size: 16px;
+
+}
+
+button {
+  width: 60%;
+  height: 20px;
+  margin-left: auto;
+  background-color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  border: 2px solid black;
+}
+
+.color {
+  height: 10px;
+  width: 10px;
+}
+
+.message {
+  border: 1px solid grey;
+  color: grey;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.error {
+  border-color: red;
+  color: red;
+}
+
+.loading {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  margin-left: 50%;
+}
+
+.loading:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #333;
+  border-color: #333 transparent #333 transparent;
+  animation: loading 1.2s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}

@@ -1,20 +1,21 @@
-import { baseUrl } from "./settings/api.js";
-import displayMessage from "./components/displayMessage.js";
+import { url } from "./components/constants/constants.js";
+import apiCall from "./components/utils/api/apiCall.js";
+import { renderProducts } from "./components/ui/renderProducts.js";
+import { displayMessage } from "./components/ui/displayMessage.js";
+import { searchProducts } from "./components/utils/filter/searchProducts.js";
 
-console.log(baseUrl)
 
-const url = baseUrl + "articles";
-
-
-export async function getApi() {
+async function getProducts() {
   try {
-    const response = await fetch(url);
-    const data = await response.json();
-    console.log(data)
+    const data = await apiCall(url);
+
+    renderProducts(data)
+    searchProducts(data)
   } catch (error) {
-    console.log("Something went wrong trying to fetch API");
-    displayMessage(error, ".results__container");
+    displayMessage("error", "Something went wrong, try to refresh page", ".results__container");
+    console.log(error)
+  
   }
 }
 
-getApi();
+getProducts();
