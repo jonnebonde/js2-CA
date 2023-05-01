@@ -9,6 +9,7 @@ const apiUrl = baseUrl + "/articles";
 async function getProducts() {
   try {
     const data = await apiCall(apiUrl);
+    console.log(data)
     renderArticles(data)
     searchArticles(data)
   } catch (error) {

@@ -1,5 +1,6 @@
 import { resultsContainer } from "../constants/constants.js";
 import { displayMessage } from "./displayMessage.js";
+import { newDateFormat } from "../reformatDate.js";
 import { getFromLocalStorage } from "../utils/storage/localStorage.js";
 import { createFavouritesList } from "../utils/storage/createFavouritesList.js";
 import { keys } from "../../settings/storageKeys.js";
@@ -28,9 +29,15 @@ export function renderArticles(items) {
       btnText = "add to favourites";
     }
 
+    const date = newDateFormat(favs.published_at);
+
+
+    console.log(date)
+
     resultsContainer.innerHTML += `<div class="card">
     <h4>${favs.title}</h4>
-    <span>Author: ${favs.author}</span>
+    <p>Author: ${favs.author}</p>
+    <p>Published: ${date}</p>
     <Button data-id="${favs.id}" data-title="${favs.title}" data-author="${favs.author}" data-summary="${favs.summary}" data-date="${favs}">${btnText}</Button>
     </div>`;
   }
