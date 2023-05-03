@@ -1,37 +1,49 @@
-* {
+@import "/styles/partials/navbar.css";
+
+*,
+*::after,
+*::before {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.wrapper {
+  flex: 1 0 auto;
+  width: 100%;
 }
 
 body {
   display: flex;
   flex-direction: column;
-  gap: 20px;
   align-items: center;
 }
 
-ul {
-  list-style: none;
+footer {
   display: flex;
-  gap: 20px;
+  flex-shrink: 0;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  background-color: aqua;
 }
 
-a {
-  color: black;
-  text-decoration: none;
-  font-size: 20px;
+.filter__container,
+h1 {
+  text-align: center;
+  margin-bottom: 2em;
 }
 
-a:hover,
-.active__page {
-  border-bottom: 2px solid black;
-}
-
-.filter input {
+#title {
   border: 1px solid black;
   border-radius: 4px;
   padding: 10px;
 }
-
 
 .results__container,
 .favourites__container {
@@ -64,7 +76,7 @@ a:hover,
   font-size: 16px;
 }
 
-button {
+.card button {
   width: 60%;
   margin-left: auto;
   background-color: white;
@@ -120,5 +132,13 @@ button:hover {
   }
   100% {
       transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 450px) {
+  .results__container,
+  #title {
+    width: 90%;
+    margin: 0 auto;
   }
 }

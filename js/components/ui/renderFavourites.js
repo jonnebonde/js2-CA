@@ -1,6 +1,6 @@
 import { favouritesContainer } from "../constants/constants.js";
 import { removeFromList } from "../utils/storage/removeFromList.js";
-import { displayMessage } from "./displayMessage.js";
+import displayMessage from "../displayMessage.js";
 
 export function renderFavourites(favsList, key) {
   favouritesContainer.innerHTML = "";

@@ -1,0 +1,10 @@
+.navbar-toggler:hover {
+  border: none !important;
+  outline: 2px solid black;
+}
+
+.navbar-toggler:focus {
+  border: none !important;
+  outline: 2px solid black;
+}
+

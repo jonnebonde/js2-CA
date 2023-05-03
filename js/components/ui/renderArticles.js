@@ -1,5 +1,5 @@
 import { resultsContainer } from "../constants/constants.js";
-import { displayMessage } from "./displayMessage.js";
+import displayMessage from "../displayMessage.js";
 import { newDateFormat } from "../reformatDate.js";
 import { getFromLocalStorage } from "../utils/storage/localStorage.js";
 import { createFavouritesList } from "../utils/storage/createFavouritesList.js";
