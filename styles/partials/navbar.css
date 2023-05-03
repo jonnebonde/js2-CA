@@ -8,3 +8,12 @@
   outline: 2px solid black;
 }
 
+.links__container {
+  margin-left: auto;
+}
+
+.login__container {
+  margin-right: 0;
+  margin-left: auto;
+}
+

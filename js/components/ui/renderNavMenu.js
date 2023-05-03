@@ -3,13 +3,13 @@
 export default function navBarMenu() {
   const { pathname } = document.location;
 
-  const userName = "";
-  const tokenKey = "";
+  const userName = "knut";
+  const tokenKey = "fiske";
 
   const menuContainer = document.querySelector(".menu__container");
 
   const ul = document.createElement("ul");
-  ul.classList.add("navbar-nav", "text-center");
+  ul.classList.add("navbar-nav", "text-center", "links__container");
 
   const liHome = document.createElement("li");
   liHome.classList.add("nav-item");
@@ -45,10 +45,13 @@ export default function navBarMenu() {
   }
 
 
+const loginContainer = document.createElement("ul");
+loginContainer.classList.add("navbar-nav", "text-center", "login__container");
+
 
   const liLogin = document.createElement("li");
   liLogin.classList.add("nav-item");
-  ul.appendChild(liLogin);
+  loginContainer.appendChild(liLogin);
 
   const loginLink = document.createElement("a");
   loginLink.classList.add("nav-link");
@@ -62,17 +65,50 @@ export default function navBarMenu() {
 
   liLogin.appendChild(loginLink);
 
-  const loggedIn = document.createElement("a");
-  const loggedinUsername = document.createElement("li");
+
+  const dropDownMenuContainer = document.createElement("div");
+  dropDownMenuContainer.classList.add("dropdown");
+
+  const dropDownToggleBtn = document.createElement("button");
+  dropDownToggleBtn.classList.add("btn", "btn-secondary", "dropdown-toggle");
+  dropDownToggleBtn.setAttribute("type", "button");
+  dropDownToggleBtn.setAttribute("data-bs-toggle", "dropdown");
+  dropDownToggleBtn.setAttribute("aria-expanded", "false")
+
+  dropDownMenuContainer.appendChild(dropDownToggleBtn);
+
+  const dropDownMenu = document.createElement("ul");
+  dropDownMenu.classList.add("dropdown-menu");
+
+  const dropDownMenuLi = document.createElement("li");
+  const dropDownAddLink = document.createElement("a");
+
+  const dropDownMenuLogoutLi = document.createElement("li")
+  const dropDownLogOut = document.createElement("a");
+
+
 
   if (tokenKey.length !== 0 && userName) {
-    liLogin.removeChild(loginLink);
-    loggedIn.innerText =  "Add new article";
-    loggedIn.classList.add("nav-link");
-    loggedIn.setAttribute("href", "/add.html");
-    liLogin.appendChild(loggedIn);
-    loggedinUsername.innerText = `Welcome ${userName}`;
-    ul.appendChild(loggedinUsername);
+    loginContainer.removeChild(liLogin);
+    loginContainer.appendChild(dropDownMenuContainer);
+
+    dropDownToggleBtn.innerText = `Welcome ${userName}`;
+
+    dropDownMenuContainer.appendChild(dropDownMenu);
+    dropDownMenu.appendChild(dropDownMenuLi);
+    dropDownMenuLi.appendChild(dropDownAddLink);
+
+    dropDownAddLink.classList.add("dropdown-item");
+    dropDownAddLink.setAttribute("href", "/add.html");
+    dropDownAddLink.innerText = "Add Article";
+
+    dropDownMenu.appendChild(dropDownMenuLogoutLi);
+    dropDownMenuLogoutLi.appendChild(dropDownLogOut);
+
+    dropDownLogOut.classList.add("dropdown-item");
+    dropDownLogOut.setAttribute("href", "#");
+    dropDownLogOut.innerText = "Log out";
+
   }
 
   if(pathname === "/add.html") {
@@ -80,4 +116,5 @@ export default function navBarMenu() {
   }
 
   menuContainer.appendChild(ul);
+  menuContainer.appendChild(loginContainer)
 }

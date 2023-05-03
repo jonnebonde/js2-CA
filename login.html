@@ -11,7 +11,7 @@
 <body>
   <div class="wrapper">
     <header>
-      <nav class="navbar bg-body-tertiary">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="index.html">Grumpy Animals</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,6 +24,20 @@
     </header>
     <main>
       <h1>Login</h1>
+      <div class="message__container"></div>      
+      <form>
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your username with anyone.</div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password">
+          <div id="passwordHelp" class="form-text">Your password is safe with us.</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
     </main>
   </div>
   <footer>
