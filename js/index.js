@@ -4,8 +4,10 @@ import { renderArticles } from "./components/ui/renderArticles.js";
 import displayMessage from "./components/displayMessage.js";
 import { searchArticles } from "./components/utils/filter/searchArticles.js";
 import navBarMenu from "./components/ui/renderNavMenu.js";
+import userLogout from "./components/logout.js";
 
-navBarMenu()
+navBarMenu();
+userLogout()
 
 const apiUrl = baseUrl + "/articles";
 
@@ -16,7 +18,7 @@ async function getProducts() {
     renderArticles(data)
     searchArticles(data)
   } catch (error) {
-    displayMessage("error", "Something went wrong, try to refresh page", ".results__container");
+    displayMessage("Something went wrong, try to refresh page", ".results__container", "error");
     console.log(error)
   
   }

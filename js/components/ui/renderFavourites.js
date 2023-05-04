@@ -6,7 +6,7 @@ export function renderFavourites(favsList, key) {
   favouritesContainer.innerHTML = "";
 
   if (favsList.length === 0) {
-    displayMessage("error", "No favourites", ".favourites__container");
+    displayMessage("No favourites", ".favourites__container", "error" );
   }
 
   favsList.forEach((favs) => {

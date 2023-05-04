@@ -11,7 +11,7 @@ export function renderArticles(items) {
   const favouritesKey = keys[0];
 
   if (items.length === 0) {
-    displayMessage("error", "No products found", ".results__container");
+    displayMessage("No products found", ".results__container", "error" );
   }
 
   const favsList = getFromLocalStorage(favouritesKey);

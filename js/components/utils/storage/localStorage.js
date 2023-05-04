@@ -14,3 +14,7 @@ export function getFromLocalStorage(key) {
   }
 }
 
+export function deleteFromLocalStorage(key) {
+  localStorage.removeItem(key);
+}
+

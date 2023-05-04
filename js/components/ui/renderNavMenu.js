@@ -1,10 +1,12 @@
-/* import { getUserName, getToken } from "../utils/localStorage.js"; */
+import { getUserName, getToken } from "../utils/storage/userStorage.js";
 
 export default function navBarMenu() {
   const { pathname } = document.location;
 
-  const userName = "knut";
-  const tokenKey = "fiske";
+  const userName = getUserName();
+  const tokenKey = getToken();
+
+  console.log(userName)
 
   const menuContainer = document.querySelector(".menu__container");
 
@@ -100,15 +102,15 @@ loginContainer.classList.add("navbar-nav", "text-center", "login__container");
 
     dropDownAddLink.classList.add("dropdown-item");
     dropDownAddLink.setAttribute("href", "/add.html");
-    dropDownAddLink.innerText = "Add Article";
+    dropDownAddLink.innerText = "New Article";
 
     dropDownMenu.appendChild(dropDownMenuLogoutLi);
     dropDownMenuLogoutLi.appendChild(dropDownLogOut);
 
     dropDownLogOut.classList.add("dropdown-item");
+    dropDownLogOut.setAttribute("id", "logout-btn")
     dropDownLogOut.setAttribute("href", "#");
     dropDownLogOut.innerText = "Log out";
-
   }
 
   if(pathname === "/add.html") {
