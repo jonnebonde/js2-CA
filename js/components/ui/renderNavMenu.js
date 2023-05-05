@@ -6,8 +6,6 @@ export default function navBarMenu() {
   const userName = getUserName();
   const tokenKey = getToken();
 
-  console.log(userName)
-
   const menuContainer = document.querySelector(".menu__container");
 
   const ul = document.createElement("ul");
@@ -27,7 +25,6 @@ export default function navBarMenu() {
     homeLink.setAttribute("aria-current", "page");
   }
   liHome.appendChild(homeLink);
-
 
 
   const liFavourites = document.createElement("li");
@@ -118,5 +115,7 @@ loginContainer.classList.add("navbar-nav", "text-center", "login__container");
   }
 
   menuContainer.appendChild(ul);
-  menuContainer.appendChild(loginContainer)
+  menuContainer.appendChild(loginContainer); 
+
+
 }

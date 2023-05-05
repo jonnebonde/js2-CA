@@ -52,6 +52,7 @@ h1 {
   gap: 10px;
   justify-content: center;
   max-width: 1920px;
+  margin: 0 auto;
 }
 
 .card {
@@ -107,6 +108,20 @@ button:hover {
   color: red;
 }
 
+.error__input {
+  color: red;
+  border: 2px solid red !important;
+}
+
+.success {
+  color: rgb(129, 255, 129);
+  font-size: 1.2em;
+}
+
+.success__input {
+  border: 2px solid rgb(129, 255, 129) !important;
+}
+
 .loading {
   display: inline-block;
   width: 80px;
@@ -142,3 +157,5 @@ button:hover {
     margin: 0 auto;
   }
 }
+
+

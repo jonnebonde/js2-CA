@@ -1,7 +1,8 @@
 import navBarMenu from "./components/ui/renderNavMenu.js";
-import { getToken, getUserName, saveToken, saveUser } from "./components/utils/storage/userStorage.js";
+import { getToken, getUserName} from "./components/utils/storage/userStorage.js";
 import displayMessage from "./components/displayMessage.js";
-import { baseUrl } from "./settings/api.js";
+import { checkLength } from "./components/utils/checkLength.js";
+import { authLoginCredentials } from "./components/utils/api/apiLogin.js";
 
 navBarMenu()
 
@@ -13,64 +14,41 @@ if(user && token) {
 }
 
 const form = document.querySelector("form");
-const username = document.querySelector("#username");
-const password = document.querySelector("#password");
-const messageContainer = document.querySelector(".message__container");
+const usernameInput = document.querySelector("#username");
+const passwordInput = document.querySelector("#password");
+
+const usernameMessage = document.querySelector("#usernameHelp");
+const passwordMessage = document.querySelector("#passwordHelp");
 
 form.addEventListener("submit", validateForm);
 
 function validateForm(event) {
   event.preventDefault();
 
-  messageContainer.innerText = "";
+  const usernameValue = checkLength(usernameInput.value, 0);
+  const passwordValue = checkLength(passwordInput.value, 0);
 
-  const usernameValue = username.value.trim();
-  const passwordValue = password.value.trim();
+  if (usernameValue) {
+    usernameMessage.textContent = "We'll never share your username with anyone";
+    usernameInput.classList.remove("error__input");
+    usernameInput.classList.add("success__input");
+  } else {
+    displayMessage("Username is required", "#usernameHelp", "error");
+    usernameInput.classList.remove("success__input");
+    usernameInput.classList.add("error__input");
+  }
 
-  if (usernameValue.length !== 0 && passwordValue.length !== 0) {
+  if (passwordValue) {
+    passwordMessage.textContent = "Your password is safe with us.";
+    passwordInput.classList.remove("error__input");
+    passwordInput.classList.add("success__input");
+  } else {
+    displayMessage("Password is required", "#passwordHelp", "error");
+    passwordInput.classList.remove("success__input");
+    passwordInput.classList.add("error__input");
+  }
+
+  if (usernameValue && passwordValue) {
     authLoginCredentials(usernameValue, passwordValue);
   }
-  displayMessage("Please fill out all fields", ".message__container", "error");
-}
-
-async function authLoginCredentials(username, password) {
-  const url = baseUrl + "/auth/local";
-
-  const data = JSON.stringify({ identifier: username, password: password });
-
-  const options = {
-    method: "POST",
-    body: data,
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
-
-  try {
-    const response = await fetch(url, options);
-    const json = await response.json();
-    console.log(json);
-
-    if (json.user) {
-      console.log(json.user, json.jwt);
-
-      saveToken(json.jwt);
-      saveUser(json.user);
-
-      displayMessage("Success", ".message__container", "success");
-      redirect();
-    }
-
-    if (json.error) {
-      displayMessage("invalid login credentials", ".message__container", "error");
-    }
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-function redirect() {
-  setTimeout(function () {
-    location.href = "/";
-  }, 1000);
 }
