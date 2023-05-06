@@ -122,11 +122,16 @@ button:hover {
   border: 2px solid rgb(129, 255, 129) !important;
 }
 
+.clean--btn__container {
+  text-align: center;
+  margin-top: 2rem;
+  display: none;
+}
+
 .loading {
   display: inline-block;
   width: 80px;
   height: 80px;
-  margin-left: 50%;
 }
 
 .loading:after {

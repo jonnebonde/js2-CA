@@ -17,3 +17,27 @@
   margin-left: auto;
 }
 
+.login__container button {
+  border: none;
+  color: #000000A6 ;
+}
+
+.login__container button:hover {
+  border: none;
+}
+
+.username__container {
+  display: flex;
+  align-items: center;
+  text-decoration: underline;
+  padding: 5px;
+}
+
+
+@media (max-width: 992px) {
+  .username__container {
+    margin: 0 auto;
+    margin-top: 1rem;
+    text-align: center;
+  }
+}

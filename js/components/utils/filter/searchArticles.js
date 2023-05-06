@@ -7,7 +7,7 @@ export function searchArticles(articles) {
     const searchValue = event.target.value.trim();
 
     const filteredArticles = articles.filter(function (article) {
-      if (searchValue >= article.price) {
+      if (article.title.trim().toLowerCase().startsWith(searchValue.toLowerCase())) {
         return true;
       }
     });

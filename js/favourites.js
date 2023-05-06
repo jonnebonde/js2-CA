@@ -4,8 +4,8 @@ import { keys } from "./settings/storageKeys.js";
 import navBarMenu from "./components/ui/renderNavMenu.js";
 import userLogout from "./components/logout.js";
 
-navBarMenu()
-userLogout()
+navBarMenu();
+userLogout();
 
 function favouritesList() {
 

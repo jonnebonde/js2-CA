@@ -1,16 +1,16 @@
 import navBarMenu from "./components/ui/renderNavMenu.js";
-import { getToken, getUserName} from "./components/utils/storage/userStorage.js";
+import { getToken, getUserName } from "./components/utils/storage/userStorage.js";
 import displayMessage from "./components/displayMessage.js";
 import { checkLength } from "./components/utils/checkLength.js";
 import { authLoginCredentials } from "./components/utils/api/apiLogin.js";
 
-navBarMenu()
+navBarMenu();
 
 const token = getToken();
 const user = getUserName();
 
-if(user && token) {
-  location.href = "/";
+if (user && token) {
+  location.href = "/index.html";
 }
 
 const form = document.querySelector("form");

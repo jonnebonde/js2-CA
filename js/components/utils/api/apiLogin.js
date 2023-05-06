@@ -27,7 +27,7 @@ export async function authLoginCredentials(username, password) {
       saveUser(json.user);
 
       displayMessage("Success", ".message__container", "success");
-      location.href = "/";
+      location.href = "/index.html";
     }
 
     if (json.error) {

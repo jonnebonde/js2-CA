@@ -26,7 +26,6 @@ export default function navBarMenu() {
   }
   liHome.appendChild(homeLink);
 
-
   const liFavourites = document.createElement("li");
   liFavourites.classList.add("nav-item");
   ul.appendChild(liFavourites);
@@ -38,15 +37,13 @@ export default function navBarMenu() {
 
   liFavourites.appendChild(favouritesLink);
 
-  if(pathname === "/favourites.html") {
+  if (pathname === "/favourites.html") {
     favouritesLink.classList.add("active");
     favouritesLink.setAttribute("aria-current", "page");
   }
 
-
-const loginContainer = document.createElement("ul");
-loginContainer.classList.add("navbar-nav", "text-center", "login__container");
-
+  const loginContainer = document.createElement("ul");
+  loginContainer.classList.add("navbar-nav", "text-center", "login__container");
 
   const liLogin = document.createElement("li");
   liLogin.classList.add("nav-item");
@@ -64,58 +61,46 @@ loginContainer.classList.add("navbar-nav", "text-center", "login__container");
 
   liLogin.appendChild(loginLink);
 
+  const loggedInAddArticleLi = document.createElement("li");
+  loggedInAddArticleLi.classList.add("nav-item");
 
-  const dropDownMenuContainer = document.createElement("div");
-  dropDownMenuContainer.classList.add("dropdown");
+  const loggedInAddArticleLink = document.createElement("a");
+  loggedInAddArticleLink.classList.add("nav-link");
+  loggedInAddArticleLink.setAttribute("href", "/add.html");
+  loggedInAddArticleLink.innerText = "Add Article";
 
-  const dropDownToggleBtn = document.createElement("button");
-  dropDownToggleBtn.classList.add("btn", "btn-secondary", "dropdown-toggle");
-  dropDownToggleBtn.setAttribute("type", "button");
-  dropDownToggleBtn.setAttribute("data-bs-toggle", "dropdown");
-  dropDownToggleBtn.setAttribute("aria-expanded", "false")
-
-  dropDownMenuContainer.appendChild(dropDownToggleBtn);
-
-  const dropDownMenu = document.createElement("ul");
-  dropDownMenu.classList.add("dropdown-menu");
-
-  const dropDownMenuLi = document.createElement("li");
-  const dropDownAddLink = document.createElement("a");
-
-  const dropDownMenuLogoutLi = document.createElement("li")
-  const dropDownLogOut = document.createElement("a");
-
-
-
-  if (tokenKey.length !== 0 && userName) {
-    loginContainer.removeChild(liLogin);
-    loginContainer.appendChild(dropDownMenuContainer);
-
-    dropDownToggleBtn.innerText = `Welcome ${userName}`;
-
-    dropDownMenuContainer.appendChild(dropDownMenu);
-    dropDownMenu.appendChild(dropDownMenuLi);
-    dropDownMenuLi.appendChild(dropDownAddLink);
-
-    dropDownAddLink.classList.add("dropdown-item");
-    dropDownAddLink.setAttribute("href", "/add.html");
-    dropDownAddLink.innerText = "New Article";
-
-    dropDownMenu.appendChild(dropDownMenuLogoutLi);
-    dropDownMenuLogoutLi.appendChild(dropDownLogOut);
-
-    dropDownLogOut.classList.add("dropdown-item");
-    dropDownLogOut.setAttribute("id", "logout-btn")
-    dropDownLogOut.setAttribute("href", "#");
-    dropDownLogOut.innerText = "Log out";
+  if (pathname === "/add.html") {
+    loggedInAddArticleLink.classList.add("active");
+    loggedInAddArticleLink.setAttribute("aria-current", "page");
   }
 
-  if(pathname === "/add.html") {
-    loggedIn.classList.add("active");
-  }
+  const loggedInLogoutLi = document.createElement("li");
+  loggedInLogoutLi.classList.add("nav-item");
+
+  const loggedInLogOutButton = document.createElement("button");
+  loggedInLogOutButton.classList.add("btn");
+  loggedInLogOutButton.setAttribute("type", "button");
+  loggedInLogOutButton.innerText = "Logout";
 
   menuContainer.appendChild(ul);
-  menuContainer.appendChild(loginContainer); 
+
+  const userNameContainer = document.createElement("div");
+  userNameContainer.classList.add("username__container");
+
+  if (tokenKey.length !== 0 && userName) {
+    loginContainer.appendChild(userNameContainer);
+
+    userNameContainer.innerText = `${userName}`;
+
+    loginContainer.removeChild(liLogin);
+
+    loginContainer.appendChild(loggedInAddArticleLi);
+    loggedInAddArticleLi.appendChild(loggedInAddArticleLink);
+
+    loginContainer.appendChild(loggedInLogoutLi);
+    loggedInLogoutLi.appendChild(loggedInLogOutButton);
+  }
 
 
+  menuContainer.appendChild(loginContainer);
 }

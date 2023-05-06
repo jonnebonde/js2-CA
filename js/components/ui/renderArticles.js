@@ -32,8 +32,6 @@ export function renderArticles(items) {
     const date = newDateFormat(favs.published_at);
 
 
-    console.log(date)
-
     resultsContainer.innerHTML += `<div class="card">
     <h4>${favs.title}</h4>
     <p>Author: ${favs.author}</p>

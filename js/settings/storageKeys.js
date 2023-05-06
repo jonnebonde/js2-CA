@@ -1,1 +1,1 @@
-export const keys = ["Favourites", "user", "token"];
+export const keys = ["favourites", "user", "token"];
