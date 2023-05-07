@@ -35,9 +35,15 @@
 
 
 @media (max-width: 992px) {
+
+
   .username__container {
     margin: 0 auto;
     margin-top: 1rem;
     text-align: center;
+  }
+
+  .login__container {
+    background-color: #dededea6;
   }
 }
