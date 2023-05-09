@@ -24,6 +24,24 @@
     </header>
     <main>
       <h1>Grumpy Animals Articles</h1>
+      <form>
+        <div class="mb-3">
+          <label for="inputTitleArticle" class="form-label">Title</label>
+          <input type="text" class="form-control" id="inputTitleArticle" aria-describedby="titleHelp">
+          <div id="titleHelp" class="form-text"></div>
+        </div>
+        <div class="mb-3">
+          <label for="inputSummaryArticle" class="form-label">Summary</label>
+          <input type="text" class="form-control" id="inputSummaryArticle" aria-describedby="summaryHelp">
+          <div id="summaryHelp" class="form-text"></div>
+        </div>
+        <div class="mb-3">
+          <label for="inputAuthorArticle" class="form-label">Author</label>
+          <input type="text" class="form-control" id="inputAuthorArticle" aria-describedby="authorHelp">
+          <div id="authorHelp" class="form-text"></div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Article</button>
+      </form>
     </main>
   </div>
   <footer>

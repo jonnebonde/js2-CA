@@ -19,18 +19,18 @@ export function renderFavourites(favsList, key) {
 
       const cardTitle = document.createElement("h4");
       cardTitle.innerText = favs.title;
-      cardContainer.appendChild(cardTitle);
+      cardContainer.append(cardTitle);
 
       const cardAuthor = document.createElement("span");
       cardAuthor.innerText = "Author: " + favs.author;
-      cardContainer.appendChild(cardAuthor);
+      cardContainer.append(cardAuthor);
 
       const cardButton = document.createElement("button");
       cardButton.innerText = "Remove from wishlist";
       cardButton.setAttribute("data-id", favs.id);
-      cardContainer.appendChild(cardButton);
+      cardContainer.append(cardButton);
 
-      favouritesContainer.appendChild(cardContainer);
+      favouritesContainer.append(cardContainer);
 
       const clearFavoritesBtn = document.querySelector(".clean--btn__container button");
 
