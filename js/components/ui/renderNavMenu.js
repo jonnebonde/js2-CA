@@ -1,10 +1,7 @@
-import { getUserName, getToken } from "../utils/storage/userStorage.js";
+import { user, token } from "../utils/storage/userStorage.js";
 
 export default function navBarMenu() {
   const { pathname } = document.location;
-
-  const userName = getUserName();
-  const tokenKey = getToken();
 
   const menuContainer = document.querySelector(".menu__container");
 
@@ -87,10 +84,10 @@ export default function navBarMenu() {
   const userNameContainer = document.createElement("div");
   userNameContainer.classList.add("username__container");
 
-  if (tokenKey.length !== 0 && userName) {
+  if (token && user) {
     loginContainer.appendChild(userNameContainer);
 
-    userNameContainer.innerText = `${userName}`;
+    userNameContainer.innerText = `${user}`;
 
     loginContainer.removeChild(liLogin);
 
@@ -100,7 +97,6 @@ export default function navBarMenu() {
     loginContainer.appendChild(loggedInLogoutLi);
     loggedInLogoutLi.appendChild(loggedInLogOutButton);
   }
-
 
   menuContainer.appendChild(loginContainer);
 }

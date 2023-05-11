@@ -6,7 +6,7 @@ export function saveToken(token) {
   addLocalStorage(token, keys[2]);
 }
 
-export function getToken() {
+function getToken() {
   return getFromLocalStorage(keys[2]);
 }
 
@@ -14,7 +14,7 @@ export function saveUser(user) {
   addLocalStorage(user, keys[1])
 }
 
-export function getUserName() {
+function getUserName() {
   const user = getFromLocalStorage(keys[1]);
   if(user) {
     return user.username;
@@ -22,3 +22,6 @@ export function getUserName() {
 
   return null;
 }
+
+export const token = getToken();
+export const user = getUserName();

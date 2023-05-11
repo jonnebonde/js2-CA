@@ -1,28 +1,25 @@
 import navBarMenu from "./components/ui/renderNavMenu.js";
-import { getToken, getUserName } from "./components/utils/storage/userStorage.js";
+import { token, user } from "./components/utils/storage/userStorage.js";
 import displayMessage from "./components/displayMessage.js";
 import { checkLength } from "./components/utils/checkLength.js";
 import { authLoginCredentials } from "./components/utils/api/apiLogin.js";
 
 navBarMenu();
 
-const token = getToken();
-const user = getUserName();
-
 if (user && token) {
   location.href = "/index.html";
 }
 
-const form = document.querySelector("form");
+const loginForm = document.querySelector("#login__form");
 const usernameInput = document.querySelector("#username");
 const passwordInput = document.querySelector("#password");
 
 const usernameMessage = document.querySelector("#usernameHelp");
 const passwordMessage = document.querySelector("#passwordHelp");
 
-form.addEventListener("submit", validateForm);
+loginForm.addEventListener("submit", validateloginForm);
 
-function validateForm(event) {
+function validateloginForm(event) {
   event.preventDefault();
 
   const usernameValue = checkLength(usernameInput.value, 0);

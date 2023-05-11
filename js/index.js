@@ -11,7 +11,7 @@ userLogout();
 
 const apiUrl = baseUrl + "/articles";
 
-async function getProducts() {
+(async function () {
   try {
     const data = await apiCall(apiUrl);
     console.log(data);
@@ -21,6 +21,4 @@ async function getProducts() {
     displayMessage("Something went wrong, try to refresh page", ".results__container", "error");
     console.log(error);
   }
-}
-
-getProducts();
+}) ();

@@ -14,7 +14,7 @@ export function renderFavourites(favsList, key) {
     cleanBtnContainer.style.display = "block";
 
     favsList.forEach((favs) => {
-      const cardContainer = document.createElement("div");
+      const cardContainer = document.createElement("article");
       cardContainer.classList.add("card");
 
       const cardTitle = document.createElement("h4");
@@ -24,6 +24,10 @@ export function renderFavourites(favsList, key) {
       const cardAuthor = document.createElement("span");
       cardAuthor.innerText = "Author: " + favs.author;
       cardContainer.append(cardAuthor);
+
+      const summary = document.createElement("p");
+      summary.innerText = favs.summary;
+      cardContainer.append(summary);
 
       const cardButton = document.createElement("button");
       cardButton.innerText = "Remove from wishlist";

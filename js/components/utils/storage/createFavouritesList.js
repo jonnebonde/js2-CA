@@ -1,10 +1,10 @@
 import { addLocalStorage, getFromLocalStorage } from "./localStorage.js";
 
 export function createFavouritesList(event, key) {
-  if (event.target.innerText === "remove from favourites") {
-    event.target.innerText = "add to favourites";
+  if (event.target.innerText === "Remove from favourites") {
+    event.target.innerText = "Add to favourites";
   } else {
-    event.target.innerText = "remove from favourites";
+    event.target.innerText = "Remove from favourites";
   }
 
   let id = event.target.dataset.id;
