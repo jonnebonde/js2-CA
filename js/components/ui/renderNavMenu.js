@@ -75,7 +75,7 @@ export default function navBarMenu() {
   loggedInLogoutLi.classList.add("nav-item");
 
   const loggedInLogOutButton = document.createElement("button");
-  loggedInLogOutButton.classList.add("btn");
+  loggedInLogOutButton.classList.add("btn", "btn-danger");
   loggedInLogOutButton.setAttribute("type", "button");
   loggedInLogOutButton.innerText = "Logout";
 

@@ -33,6 +33,10 @@
   padding: 5px;
 }
 
+.login__container button {
+  color: white !important;
+}
+
 
 @media (max-width: 992px) {
 
