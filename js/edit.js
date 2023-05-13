@@ -1,5 +1,6 @@
 import displayMessage from "./components/displayMessage.js";
 import navBarMenu from "./components/ui/renderNavMenu.js";
+import userLogout from "./components/logout.js";
 import apiCall from "./components/utils/apiCall.js";
 import { baseUrl } from "./settings/api.js";
 import { loaderContainer } from "./components/constants/constants.js";
@@ -10,6 +11,7 @@ import { token, user } from "./components/utils/storage/userStorage.js";
 import { deleteArticle } from "./components/utils/api/apiDeleteArticle.js";
 
 navBarMenu();
+userLogout();
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
