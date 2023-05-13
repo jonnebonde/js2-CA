@@ -1,5 +1,5 @@
 import { baseUrl } from "./settings/api.js";
-import apiCall from "./components/utils/api/apiCall.js";
+import apiCall from "./components/utils/apiCall.js";
 import { renderArticles } from "./components/ui/renderArticles.js";
 import displayMessage from "./components/displayMessage.js";
 import { searchArticles } from "./components/utils/filter/searchArticles.js";
@@ -21,4 +21,4 @@ const apiUrl = baseUrl + "/articles";
     displayMessage("Something went wrong, try to refresh page", ".results__container", "error");
     console.log(error);
   }
-}) ();
+})();

@@ -2,9 +2,7 @@ import { baseUrl } from "../../../settings/api.js";
 import displayMessage from "../../displayMessage.js";
 import { token } from "../storage/userStorage.js";
 
-
 export async function updateArticle(title, summary, author, id) {
- 
   const url = baseUrl + "/articles/" + id.value;
 
   const data = JSON.stringify({ title: title, summary: summary, author: author });
@@ -25,7 +23,7 @@ export async function updateArticle(title, summary, author, id) {
 
     if (json.updated_at) {
       displayMessage("Article updated", ".message__container", "success");
-  /*     location.href = "/index.html"; */
+      /*     location.href = "/index.html"; */
     }
 
     if (json.error) {

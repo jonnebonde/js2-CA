@@ -1,6 +1,6 @@
 import displayMessage from "./components/displayMessage.js";
 import navBarMenu from "./components/ui/renderNavMenu.js";
-import apiCall from "./components/utils/api/apiCall.js";
+import apiCall from "./components/utils/apiCall.js";
 import { baseUrl } from "./settings/api.js";
 import { loaderContainer } from "./components/constants/constants.js";
 import { populateEditForm } from "./components/ui/populateEditForm.js";
@@ -17,7 +17,7 @@ const id = params.get("id");
 
 if (!id || !token || !user) {
   document.location.href = "index.html";
-} 
+}
 
 const url = baseUrl + "/articles/" + id;
 const editForm = document.querySelector("#edit_article__form");
@@ -27,25 +27,20 @@ const editForm = document.querySelector("#edit_article__form");
     const data = await apiCall(url);
     console.log(data);
     populateEditForm(data);
-    deleteArticle(data);
+    deleteArticle(data.id);
   } catch (error) {
-    console.log(error);
     displayMessage("error", ".message__container", "error");
+    location.href = "index.html";
   } finally {
     loaderContainer.style.display = "none";
     editForm.style.display = "block";
   }
-
-}) ();
-
+})();
 
 const editArticleTitleInput = editForm.querySelector("#editTitleArticle");
 const editArticleSummaryInput = editForm.querySelector("#editSummaryArticle");
 const editArticleAuthorInput = editForm.querySelector("#editAuthorArticle");
 const editArticleId = editForm.querySelector("#editArticleId");
-
-console.log(editArticleId);
-
 
 editForm.addEventListener("submit", submitEditForm);
 
@@ -79,7 +74,7 @@ function submitEditForm(event) {
     editArticleSummaryInput.classList.remove("success__input");
     editArticleSummaryInput.classList.add("error__input");
   }
-    
+
   if (authorEdited) {
     authorMessage.textContent = "";
     editArticleAuthorInput.classList.remove("error__input");
@@ -90,10 +85,8 @@ function submitEditForm(event) {
     editArticleAuthorInput.classList.add("error__input");
   }
 
-
   if (titleEdited && summaryEdited && authorEdited) {
     console.log(titleEdited, summaryEdited, authorEdited);
     updateArticle(titleEdited, summaryEdited, authorEdited, editArticleId);
   }
-
 }

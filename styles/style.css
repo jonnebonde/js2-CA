@@ -1,4 +1,6 @@
 @import "/styles/partials/navbar.css";
+@import "/styles/partials/cards.css";
+@import "/styles/partials/loader.css";
 
 *,
 *::after,
@@ -22,6 +24,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgb(204, 204, 204) !important;
 }
 
 footer {
@@ -30,7 +33,6 @@ footer {
   justify-content: center;
   width: 100%;
   padding: 10px;
-  background-color: aqua;
 }
 
 .filter__container,
@@ -45,66 +47,16 @@ h1 {
   padding: 10px;
 }
 
-.results__container,
-.favourites__container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  max-width: 1920px;
+form,
+.message__container {
+  width: 80%;
+  max-width: 600px;
   margin: 0 auto;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: lightblue !important;
-  padding: 10px;
-  width: 100%;
-  min-width: 250px;
-  max-width: 400px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-}
-
-.card:nth-child(odd) {
-  background-color: lightcoral !important;
-}
-
-.card span {
-  font-style: oblique;
-  font-size: 16px;
-}
-
-.card button,
-.card a {
-  text-align: center;
-  font-size: 14px;
-  width: 100%;
-  padding: 2px 7px;
-  background-color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  border: 2px solid white;
-}
-
-.card a {
-  text-decoration: none;
-  color: black;
-}
-
-.btn__container {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 30px;
-}
-
-button:hover,
-.card a:hover {
-  border: 2px solid black;
+button {
+  box-shadow: 0 6px 10px rgba(99, 99, 99, 0.1) !important;
+  border: none !important;
 }
 
 .color {
@@ -149,39 +101,17 @@ button:hover,
   display: none;
 }
 
-.loading {
-  display: inline-block;
-  width: 80px;
-  height: 80px;
-}
-
-.loading:after {
-  content: " ";
-  display: block;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
-  border-radius: 50%;
-  border: 6px solid #333;
-  border-color: #333 transparent #333 transparent;
-  animation: loading 1.2s linear infinite;
-}
-
-@keyframes loading {
-  0% {
-      transform: rotate(0deg);
-  }
-  100% {
-      transform: rotate(360deg);
-  }
-}
-
 @media (max-width: 450px) {
+
   .results__container,
   #title {
     width: 90%;
     margin: 0 auto;
   }
+
+  .btn__container {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
 }
-
-

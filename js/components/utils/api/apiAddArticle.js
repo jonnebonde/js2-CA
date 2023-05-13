@@ -2,7 +2,6 @@ import { baseUrl } from "../../../settings/api.js";
 import displayMessage from "../../displayMessage.js";
 import { token } from "../storage/userStorage.js";
 
-
 export async function addArticle(title, summary, author) {
   const url = baseUrl + "/articles";
 

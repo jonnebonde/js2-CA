@@ -5,12 +5,12 @@ export default function navBarMenu() {
 
   const menuContainer = document.querySelector(".menu__container");
 
-  const ul = document.createElement("ul");
-  ul.classList.add("navbar-nav", "text-center", "links__container");
+  const linksContainer = document.createElement("ul");
+  linksContainer.classList.add("navbar-nav", "text-center", "links__container");
 
   const liHome = document.createElement("li");
   liHome.classList.add("nav-item");
-  ul.appendChild(liHome);
+  linksContainer.appendChild(liHome);
 
   const homeLink = document.createElement("a");
   homeLink.classList.add("nav-link");
@@ -25,7 +25,7 @@ export default function navBarMenu() {
 
   const liFavourites = document.createElement("li");
   liFavourites.classList.add("nav-item");
-  ul.appendChild(liFavourites);
+  linksContainer.appendChild(liFavourites);
 
   const favouritesLink = document.createElement("a");
   favouritesLink.classList.add("nav-link");
@@ -79,7 +79,7 @@ export default function navBarMenu() {
   loggedInLogOutButton.setAttribute("type", "button");
   loggedInLogOutButton.innerText = "Logout";
 
-  menuContainer.appendChild(ul);
+  menuContainer.appendChild(linksContainer);
 
   const userNameContainer = document.createElement("div");
   userNameContainer.classList.add("username__container");

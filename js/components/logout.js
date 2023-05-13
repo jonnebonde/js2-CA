@@ -3,7 +3,6 @@ import { token, user } from "./utils/storage/userStorage.js";
 import { keys } from "../settings/storageKeys.js";
 
 export default function userLogout() {
-
   if (user && token) {
     const logOutBtn = document.querySelector(".login__container button");
 

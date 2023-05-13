@@ -40,7 +40,7 @@ export function renderArticles(items) {
     <span></span>
     <time></time>
     <div>
-    <button></button>
+      <button></button>
     </div>
     `;
 

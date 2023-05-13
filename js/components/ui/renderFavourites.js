@@ -14,27 +14,25 @@ export function renderFavourites(favsList, key) {
     cleanBtnContainer.style.display = "block";
 
     favsList.forEach((favs) => {
-      const cardContainer = document.createElement("article");
-      cardContainer.classList.add("card");
+      const favouriteCardContainer = document.createElement("article");
+      favouriteCardContainer.classList.add("card");
 
-      const cardTitle = document.createElement("h4");
-      cardTitle.innerText = favs.title;
-      cardContainer.append(cardTitle);
+      favouriteCardContainer.innerHTML = `
+      <h4></h4>
+      <span></span>
+      <p></p>
+      <button></button>
+      `;
 
-      const cardAuthor = document.createElement("span");
-      cardAuthor.innerText = "Author: " + favs.author;
-      cardContainer.append(cardAuthor);
+      favouriteCardContainer.querySelector("h4").innerText = favs.title;
+      favouriteCardContainer.querySelector("span").innerText = "Author: " + favs.author;
+      favouriteCardContainer.querySelector("p").innerText = favs.summary;
 
-      const summary = document.createElement("p");
-      summary.innerText = favs.summary;
-      cardContainer.append(summary);
+      const favBtn = favouriteCardContainer.querySelector("button");
+      favBtn.innerText = "Remove from favourites";
+      favBtn.setAttribute("data-id", favs.id);
 
-      const cardButton = document.createElement("button");
-      cardButton.innerText = "Remove from wishlist";
-      cardButton.setAttribute("data-id", favs.id);
-      cardContainer.append(cardButton);
-
-      favouritesContainer.append(cardContainer);
+      favouritesContainer.append(favouriteCardContainer);
 
       const clearFavoritesBtn = document.querySelector(".clean--btn__container button");
 

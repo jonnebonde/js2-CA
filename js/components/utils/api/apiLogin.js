@@ -21,11 +21,8 @@ export async function authLoginCredentials(username, password) {
     console.log(json);
 
     if (json.user) {
-      console.log(json.user, json.jwt);
-
       saveToken(json.jwt);
       saveUser(json.user);
-
       displayMessage("Success", ".message__container", "success");
       location.href = "/index.html";
     }
