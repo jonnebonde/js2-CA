@@ -24,7 +24,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(204, 204, 204) !important;
+  background-color: rgb(218, 217, 217) !important;
 }
 
 footer {
@@ -65,10 +65,7 @@ button {
 }
 
 .message {
-  border: 1px solid grey;
   color: grey;
-  margin-top: 1rem;
-  padding: 1rem;
 }
 
 .error {
@@ -82,12 +79,12 @@ button {
 }
 
 .success {
-  color: rgb(42, 254, 42);
+  color: rgb(0, 95, 0);
   font-size: 1.2em;
 }
 
 .success__input {
-  border: 2px solid rgb(129, 255, 129) !important;
+  border: 2px solid rgb(0, 163, 0) !important;
 }
 
 .clean--btn__container {
@@ -99,6 +96,10 @@ button {
 #add_article__form,
 #edit_article__form {
   display: none;
+}
+
+.btn {
+  border: none !important;
 }
 
 @media (max-width: 450px) {

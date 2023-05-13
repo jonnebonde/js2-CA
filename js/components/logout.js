@@ -7,11 +7,14 @@ export default function userLogout() {
     const logOutBtn = document.querySelector(".login__container button");
 
     function logOut() {
-      deleteFromLocalStorage(keys[1]);
-      deleteFromLocalStorage(keys[2]);
-      location.href = "/index.html";
-    }
+      const logOutConfirm = confirm("Are you sure you want to log out?");
 
+      if (logOutConfirm) {
+        deleteFromLocalStorage(keys[1]);
+        deleteFromLocalStorage(keys[2]);
+        location.href = "/index.html";
+      }
+    }
     logOutBtn.addEventListener("click", logOut);
   }
 }

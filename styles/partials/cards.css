@@ -39,17 +39,17 @@
 }
 
 .card button,
-.card a {
+.card a,
+.clean__btn {
   text-align: center;
   font-size: 14px;
   max-width: 175px;
   width: 100%;
   padding: 2px 7px;
   background-color: white;
-  border: none;
   border-radius: 4px;
   cursor: pointer;
-  border: 2px solid white;
+  border: 2px solid white !important;
   box-shadow: 0 6px 10px rgba(99, 99, 99, 0.1);
 }
 
@@ -58,7 +58,8 @@
   color: black;
 }
 
-button:hover,
-.card a:hover {
-  border: 2px solid black;
+.card button:hover,
+.card a:hover,
+.clean__btn:hover {
+  border: 2px solid black !important;
 }
