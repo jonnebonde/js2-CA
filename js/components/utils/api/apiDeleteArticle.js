@@ -14,6 +14,9 @@ export function deleteArticle(id) {
     const doDelete = confirm("Are you sure you want to delete this article?");
 
     if (doDelete) {
+
+      deleteArticleBtn.innerText = "Deleting...";
+      deleteArticleBtn.classList.add("btn--loading");
       const url = baseUrl + "/articles/" + id;
 
       const options = {

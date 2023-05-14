@@ -23,7 +23,7 @@ export async function updateArticle(title, summary, author, id) {
 
     if (json.updated_at) {
       displayMessage("Article updated", ".message__container", "success");
-      /*     location.href = "/index.html"; */
+      location.href = "/index.html";
     }
 
     if (json.error) {

@@ -44,6 +44,8 @@ const editArticleSummaryInput = editForm.querySelector("#editSummaryArticle");
 const editArticleAuthorInput = editForm.querySelector("#editAuthorArticle");
 const editArticleId = editForm.querySelector("#editArticleId");
 
+const submitBtn = editForm.querySelector(".submit__btn");
+
 editForm.addEventListener("submit", submitEditForm);
 
 function submitEditForm(event) {
@@ -88,7 +90,8 @@ function submitEditForm(event) {
   }
 
   if (titleEdited && summaryEdited && authorEdited) {
-    console.log(titleEdited, summaryEdited, authorEdited);
+    submitBtn.textContent = "Loading...";
+    submitBtn.classList.add("btn--loading");
     updateArticle(titleEdited, summaryEdited, authorEdited, editArticleId);
   }
 }

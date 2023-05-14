@@ -13,6 +13,7 @@ if (user && token) {
 const loginForm = document.querySelector("#login__form");
 const usernameInput = document.querySelector("#username");
 const passwordInput = document.querySelector("#password");
+const loginBtn = loginForm.querySelector(".login__btn");
 
 const usernameMessage = document.querySelector("#usernameHelp");
 const passwordMessage = document.querySelector("#passwordHelp");
@@ -47,5 +48,7 @@ function validateloginForm(event) {
 
   if (usernameValue && passwordValue) {
     authLoginCredentials(usernameValue, passwordValue);
+    loginBtn.textContent = "Loading...";
+    loginBtn.classList.add("btn--loading");
   }
 }
