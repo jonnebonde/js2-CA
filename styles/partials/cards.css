@@ -12,7 +12,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: lightblue !important;
+  background-color: hsl(246, 18%, 20%) !important;
+  color: #ffffff !important;
   padding: 10px;
   width: 100%;
   min-width: 250px;
@@ -20,10 +21,6 @@
   height: auto;
   border-radius: 8px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-}
-
-.card:nth-child(odd) {
-  background-color: lightcoral !important;
 }
 
 .card span {
@@ -46,20 +43,21 @@
   max-width: 175px;
   width: 100%;
   padding: 2px 7px;
-  background-color: white;
+  background-color: hsl(44, 40%, 08%);
+  color: #EAC153;
   border-radius: 4px;
   cursor: pointer;
-  border: 2px solid white !important;
+  border: none;
   box-shadow: 0 6px 10px rgba(99, 99, 99, 0.1);
 }
 
 .card a {
   text-decoration: none;
-  color: black;
 }
 
 .card button:hover,
 .card a:hover,
 .clean__btn:hover {
-  border: 2px solid black !important;
+  border: none;
+  background-color: hsl(44, 50%, 16%);
 }

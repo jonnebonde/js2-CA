@@ -1,11 +1,11 @@
 .navbar-toggler:hover {
   border: none !important;
-  outline: 2px solid black;
+  outline: 2px solid white;
 }
 
 .navbar-toggler:focus {
   border: none !important;
-  outline: 2px solid black;
+  outline: 2px solid white;
 }
 
 .links__container {
@@ -19,11 +19,6 @@
 
 .login__container button {
   border: none;
-  color: #000000A6 ;
-}
-
-.login__container button:hover {
-  border: none;
 }
 
 .username__container {
@@ -31,10 +26,11 @@
   align-items: center;
   text-decoration: underline;
   padding: 5px;
+  color: white;
 }
 
 .login__container button {
-  color: white !important;
+  background-color: transparent !important;
 }
 
 
@@ -47,7 +43,4 @@
     text-align: center;
   }
 
-  .login__container {
-    background-color: #dededea6;
-  }
 }

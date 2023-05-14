@@ -75,7 +75,7 @@ export default function navBarMenu() {
   loggedInLogoutLi.classList.add("nav-item");
 
   const loggedInLogOutButton = document.createElement("button");
-  loggedInLogOutButton.classList.add("btn", "btn-danger");
+  loggedInLogOutButton.classList.add("btn");
   loggedInLogOutButton.setAttribute("type", "button");
   loggedInLogOutButton.innerText = "Logout";
 
@@ -87,7 +87,7 @@ export default function navBarMenu() {
   if (token && user) {
     loginContainer.appendChild(userNameContainer);
 
-    userNameContainer.innerText = `${user}`;
+    userNameContainer.innerText = `Welcome ${user}`;
 
     loginContainer.removeChild(liLogin);
 

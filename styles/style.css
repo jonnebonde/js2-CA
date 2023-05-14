@@ -24,7 +24,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(218, 217, 217) !important;
+  background-color: hsl(250, 21%, 11%) !important;
 }
 
 footer {
@@ -33,10 +33,12 @@ footer {
   justify-content: center;
   width: 100%;
   padding: 10px;
+  color: hsl(246, 6%, 55%);
 }
 
 .filter__container,
 h1 {
+  color: #ffffff !important;
   text-align: center;
   margin-bottom: 2em;
 }
@@ -55,7 +57,6 @@ form,
 }
 
 button {
-  box-shadow: 0 6px 10px rgba(99, 99, 99, 0.1) !important;
   border: none !important;
 }
 
@@ -79,12 +80,12 @@ button {
 }
 
 .success {
-  color: rgb(0, 95, 0);
+  color: hsl(152, 38%, 42%);
   font-size: 1.2em;
 }
 
 .success__input {
-  border: 2px solid rgb(0, 163, 0) !important;
+  border: 2px solid hsl(152, 38%, 42%) !important;
 }
 
 .clean--btn__container {
@@ -98,8 +99,9 @@ button {
   display: none;
 }
 
-.btn {
-  border: none !important;
+label,
+.form-text {
+  color: #ffffff !important;
 }
 
 @media (max-width: 450px) {

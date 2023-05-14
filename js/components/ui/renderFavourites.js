@@ -47,7 +47,8 @@ export function renderFavourites(favsList, key) {
 
   favButton.forEach((btn) => {
     btn.addEventListener("click", function (e) {
-      removeFromList(e, favsList, key);
+      const id = e.target.dataset.id;
+      removeFromList(id, favsList, key);
     });
   });
 }
