@@ -19,6 +19,7 @@
 
 .login__container button {
   border: none;
+  background-color: transparent !important;
 }
 
 .username__container {
@@ -29,13 +30,7 @@
   color: white;
 }
 
-.login__container button {
-  background-color: transparent !important;
-}
-
-
 @media (max-width: 992px) {
-
 
   .username__container {
     margin: 0 auto;

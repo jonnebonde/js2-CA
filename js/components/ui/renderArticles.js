@@ -17,7 +17,7 @@ export function renderArticles(items) {
 
   const favsList = getFromLocalStorage(favouritesKey);
 
-  let btnText = "Add to favourites";
+  let btnText = "";
 
   for (let favs of items) {
     const isOnFavsList = favsList.find(function (article) {
