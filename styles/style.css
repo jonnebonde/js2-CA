@@ -34,6 +34,7 @@ footer {
   width: 100%;
   padding: 10px;
   color: hsl(246, 6%, 55%);
+  background-color: #212529;
 }
 
 .filter__container,
@@ -102,6 +103,17 @@ button {
 label,
 .form-text {
   color: #ffffff !important;
+}
+
+.submit__btn {
+  background-color: hsl(44, 40%, 08%) !important;
+  color: #EAC153 !important;
+  border: 1px solid #EAC153 !important;
+}
+
+.submit__btn:hover {
+  border: 1px solid transparent !important;
+  background-color: hsl(44, 50%, 16%) !important;
 }
 
 @media (max-width: 450px) {

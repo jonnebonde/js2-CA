@@ -26,7 +26,9 @@
     <main>
       <h1>Edit a Grumpy Animals Articles</h1>
       <div class="message__container"></div>
-      <div class="loading"></div>   
+      <div class="loading__container">
+        <div class="loading"></div>
+      </div>
       <form id="edit_article__form">
         <div class="mb-3">
           <label for="editTitleArticle" class="form-label">Title</label>
@@ -44,7 +46,7 @@
           <div id="authorHelp" class="form-text"></div>
         </div>
         <input type="hidden" id="editArticleId">
-        <button type="submit" class="btn btn-primary">Submit Article</button>
+        <button type="submit" class="btn submit__btn">Submit Article</button>
         <button type="button" class="btn btn-danger" id="deleteArticle">Delete Article</button>
       </form>
     </main>

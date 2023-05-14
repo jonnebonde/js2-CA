@@ -1,3 +1,8 @@
+.loading__container {
+  display: flex;
+  justify-content: center;
+}
+
 .loading {
   display: inline-block;
   width: 80px;

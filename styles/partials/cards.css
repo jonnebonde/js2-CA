@@ -23,9 +23,20 @@
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
 }
 
-.card span {
+.card span,
+.card time {
   font-style: oblique;
-  font-size: 16px;
+  font-size: 14px;
+}
+
+.card time {
+  margin-bottom: 0.5rem !important;
+}
+
+
+
+.card p {
+  margin: 0.6rem 0 !important;
 }
 
 .btn__container {

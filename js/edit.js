@@ -29,13 +29,13 @@ const editForm = document.querySelector("#edit_article__form");
     const data = await apiCall(url);
     console.log(data);
     populateEditForm(data);
-    deleteArticle(data.id);
+    deleteArticle(data.id); 
   } catch (error) {
     displayMessage("error", ".message__container", "error");
     location.href = "index.html";
   } finally {
     loaderContainer.style.display = "none";
-    editForm.style.display = "block";
+    editForm.style.display = "block"; 
   }
 })();
 
