@@ -19,7 +19,6 @@ export async function addArticle(title, summary, author) {
   try {
     const response = await fetch(url, options);
     const json = await response.json();
-    console.log(json);
 
     if (json.created_at) {
       displayMessage("Success", ".message__container", "success");

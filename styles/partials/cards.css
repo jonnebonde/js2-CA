@@ -2,7 +2,7 @@
 .favourites__container {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
   justify-content: center;
   max-width: 1920px;
   margin: 0 auto;
@@ -32,8 +32,6 @@
 .card time {
   margin-bottom: 0.5rem !important;
 }
-
-
 
 .card p {
   margin: 0.6rem 0 !important;

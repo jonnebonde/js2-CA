@@ -4,10 +4,11 @@ export function searchArticles(articles) {
   const searchByTitle = document.querySelector("#title");
 
   function filterArticles(event) {
-    const searchValue = event.target.value.trim();
+    const { value } = event.target;
+    const searchValue = value.trim().toLowerCase();
 
     const filteredArticles = articles.filter(function (article) {
-      if (article.title.trim().toLowerCase().startsWith(searchValue.toLowerCase())) {
+      if (article.title.trim().toLowerCase().startsWith(searchValue)) {
         return true;
       }
     });
@@ -19,7 +20,7 @@ export function searchArticles(articles) {
     }
   }
 
-  searchByTitle.addEventListener("keyup", function (e) {
+  searchByTitle.addEventListener("keyup", (e) => {
     filterArticles(e);
   });
 }

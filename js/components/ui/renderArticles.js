@@ -13,22 +13,17 @@ export function renderArticles(items) {
 
   if (items.length === 0) {
     displayMessage("No products found", ".results__container", "error");
+    return;
   }
 
   const favsList = getFromLocalStorage(favouritesKey);
-
-  let btnText = "";
 
   for (let favs of items) {
     const isOnFavsList = favsList.find(function (article) {
       return parseInt(article.id) === favs.id;
     });
 
-    if (isOnFavsList) {
-      btnText = "Remove from favourites";
-    } else {
-      btnText = "Add to favourites";
-    }
+    const btnText = isOnFavsList ? "Remove from favourites" : "Add to favourites";
 
     const date = newDateFormat(favs.published_at);
 

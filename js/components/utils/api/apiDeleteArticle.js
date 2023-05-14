@@ -14,7 +14,6 @@ export function deleteArticle(id) {
     const doDelete = confirm("Are you sure you want to delete this article?");
 
     if (doDelete) {
-
       deleteArticleBtn.innerText = "Deleting...";
       deleteArticleBtn.classList.add("btn--loading");
       const url = baseUrl + "/articles/" + id;
@@ -29,7 +28,6 @@ export function deleteArticle(id) {
       try {
         const response = await fetch(url, options);
         const json = await response.json();
-        console.log(json);
         displayMessage("Article deleted", ".message__container", "success");
         removeFromFavList(json.id);
         location.href = "/index.html";
@@ -40,10 +38,8 @@ export function deleteArticle(id) {
   }
 }
 
-
 function removeFromFavList(id) {
   const itemId = id.toString();
-  console.log(itemId)
   const favourites = getFromLocalStorage(keys[0]);
   removeFromList(itemId, favourites, keys[0]);
 }
