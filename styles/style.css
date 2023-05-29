@@ -123,7 +123,7 @@ label,
 .submit__btn,
 #deleteArticle {
   position: relative;
-  width: 125px;
+  min-width: 125px;
   height: 38px;
 }
 
